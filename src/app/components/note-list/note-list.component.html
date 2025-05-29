@@ -1,0 +1,11 @@
+<h2>Lista de Notas</h2>
+
+<div *ngIf="notes.length === 0">No hay notas registradas.</div>
+
+<ul *ngIf="notes.length > 0">
+  <li *ngFor="let note of notes">
+    <h3>{{ note.title }}</h3>
+    <p>{{ note.description }}</p>
+    <small>Fecha: {{ note.date }}</small>
+  </li>
+</ul>

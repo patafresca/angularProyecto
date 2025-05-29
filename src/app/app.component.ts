@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NoteListComponent } from './components/note-list/note-list.component';  // Importa el componente usado
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,               // Muy importante para standalone components
+  imports: [NoteListComponent],   // Aquí declaras los componentes que usas en el template
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'JavaScriptPC2';
