@@ -1,1 +1,10 @@
-<p>note-detail works!</p>
+<div *ngIf="nota; else cargando" class="detalle-nota">
+  <h2 class="titulo">📝 Detalles de la Nota</h2>
+  <h3>{{ nota.title }}</h3>
+  <p>{{ nota.description }}</p>
+  <p><strong>Fecha:</strong> {{ nota.date | date:'dd/MM/yyyy' }}</p>
+</div>
+
+<ng-template #cargando>
+  <p>Cargando nota...</p>
+</ng-template>

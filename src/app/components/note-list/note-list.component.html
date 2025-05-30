@@ -1,11 +1,19 @@
-<h2>Lista de Notas</h2>
+<h2 class="titulo">📝 Lista de Notas</h2>
 
-<div *ngIf="notes.length === 0">No hay notas registradas.</div>
+<button class="btn-agregar" (click)="irACrearNota()">➕ Nueva Nota</button>
 
-<ul *ngIf="notes.length > 0">
-  <li *ngFor="let note of notes">
+<div *ngIf="notes.length === 0" class="vacio">No hay notas registradas.</div>
+
+<ul class="lista-notas" *ngIf="notes.length > 0">
+  <li class="nota" *ngFor="let note of notes">
     <h3>{{ note.title }}</h3>
     <p>{{ note.description }}</p>
-    <small>Fecha: {{ note.date }}</small>
+    <small>📅 {{ note.date | date:'dd/MM/yyyy' }}</small>
+
+    <div class="acciones">
+      <button (click)="verDetalle(note.id!)">👁️ Ver</button>
+      <button (click)="editarNota(note.id!)">✏️ Editar</button>
+      <button (click)="eliminarNota(note.id!)">🗑️ Eliminar</button>
+    </div>
   </li>
 </ul>

@@ -1,1 +1,14 @@
-<p>note-form works!</p>
+<h2 class="titulo">📝 Crear Nueva Nota</h2>
+
+<form [formGroup]="noteForm" (ngSubmit)="crearNota()" class="formulario">
+  <label for="title">Título:</label>
+  <input type="text" id="title" formControlName="title" required>
+
+  <label for="description">Descripción:</label>
+  <textarea id="description" formControlName="description" required></textarea>
+
+  <label for="date">Fecha:</label>
+  <input type="date" id="date" formControlName="date" required>
+
+  <button type="submit" [disabled]="noteForm.invalid">💾 Guardar Nota</button>
+</form>
